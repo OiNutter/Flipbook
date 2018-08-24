@@ -1,15 +1,15 @@
 {
   "name": "Flipbook",
   "version": "0.1.0",
-  "summary": "A short description of Flipbook.",
-  "description": "TODO: Add long description of the pod here.",
+  "summary": "An image slider plugin for iOS written in Swift.",
+  "description": "Simple image slider plugin based on UIPageViewController.",
   "homepage": "https://github.com/OiNutter/Flipbook",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "OiNutter": "wille@oinutter"
+    "OiNutter": "wille@oinutter.co.uk"
   },
   "source": {
     "git": "https://github.com/OiNutter/Flipbook.git",
@@ -19,5 +19,5 @@
   "platforms": {
     "ios": "11.4"
   },
-  "source_files": "Flipbook/Classes/**/*"
+  "source_files": "Flipbook/Classes/*"
 }

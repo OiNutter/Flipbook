@@ -23,7 +23,8 @@ class ViewController: UIViewController {
             images.append("image\(i)")
         }
         
-        let flipbook = Flipbook(withImages: images)
+        let flipbook:Flipbook = Flipbook(withImages: images)
+
         addChild(flipbook)
         sliderView.addSubview(flipbook.view)
         flipbook.view.expandToParent(sliderView)

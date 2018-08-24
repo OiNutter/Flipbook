@@ -37,7 +37,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="sliderView" destination="kh9-bI-dsS" id="Ida-ht-GQf"/>
+                        <outlet property="sliderView" destination="X6v-lf-MWB" id="ET9-0Y-tes"/>
+                        <outlet property="view" destination="kh9-bI-dsS" id="ATj-4s-mdU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
