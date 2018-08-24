@@ -1,6 +1,6 @@
 //
 //  ImageDataSource.swift
-//  FBSnapshotTestCase
+//  Flipbook
 //
 //  Created by Will McKenzie on 24/08/2018.
 //

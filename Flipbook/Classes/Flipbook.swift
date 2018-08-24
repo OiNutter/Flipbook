@@ -7,11 +7,12 @@
 
 import UIKit
 
-public class Flipbook:UIViewController, UIPageViewControllerDelegate {
+public class Flipbook:UIViewController {
     
     var imageList:[UIImage] = [UIImage]()
     var pageController:UIPageViewController!
     var pageControl:UIPageControl!
+    var pageDelegate:PageViewDelegate!
     var contentMode:UIView.ContentMode = .scaleAspectFill
     var transitionStyle:UIPageViewController.TransitionStyle = .scroll
     var direction:UIPageViewController.NavigationDirection = .forward
@@ -19,7 +20,7 @@ public class Flipbook:UIViewController, UIPageViewControllerDelegate {
     var options:[UIPageViewController.OptionsKey:Any]? = nil
     var animated = true
     
-    convenience init(withImages images:[Any] = [Any](), andOptions options:[UIPageViewController.OptionsKey:Any]? = nil) {
+    public convenience init(withImages images:[Any] = [Any](), andOptions options:[UIPageViewController.OptionsKey:Any]? = nil) {
         self.init()
         self.options = options
         loadImages(images)
@@ -57,7 +58,16 @@ public class Flipbook:UIViewController, UIPageViewControllerDelegate {
             transitionStyle: transitionStyle,
             navigationOrientation: orientation,
             options: options)
-        pageController!.delegate = self
+        
+        pageControl = UIPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 50,width: view.bounds.width/2,height: 50))
+        pageControl.numberOfPages = imageList.count
+        pageControl.currentPage = 0
+        pageControl.tintColor = view.tintColor
+        pageControl.pageIndicatorTintColor = UIColor.white
+        pageControl.currentPageIndicatorTintColor = UIColor.black
+        
+        pageDelegate = PageViewDelegate(withImages: imageList, andControl: pageControl)
+        pageController!.delegate = pageDelegate
         
         let startingViewController: ImageViewController = dataSource.viewControllerAtIndex(0)!
         let viewControllers = [startingViewController]
@@ -73,12 +83,6 @@ public class Flipbook:UIViewController, UIPageViewControllerDelegate {
         addChild(pageController!)
         view.addSubview(pageController!.view)
         
-        pageControl = UIPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 50,width: view.bounds.width/2,height: 50))
-        pageControl.numberOfPages = imageList.count
-        pageControl.currentPage = 0
-        pageControl.tintColor = view.tintColor
-        pageControl.pageIndicatorTintColor = UIColor.white
-        pageControl.currentPageIndicatorTintColor = UIColor.black
         view.addSubview(pageControl)
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -102,15 +106,5 @@ public class Flipbook:UIViewController, UIPageViewControllerDelegate {
     }
     
     var _dataSource: ImageDataSource? = nil
-    
-    // MARK: - UIPageViewControllerDelegate
-    private func pageViewController(
-        _ pageViewController: UIPageViewController,
-        didFinishAnimating finished: Bool,
-        previousViewControllers: [UIViewController],
-        transitionCompleted completed: Bool
-    ) {
-        let pageContentViewController = pageViewController.viewControllers![0] as! ImageViewController
-        self.pageControl.currentPage = imageList.index(of: pageContentViewController.image)!
-    }
+        
 }
