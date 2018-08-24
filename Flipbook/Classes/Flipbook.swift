@@ -13,14 +13,15 @@ public class Flipbook:UIViewController {
     var pageController:UIPageViewController!
     var pageControl:UIPageControl!
     var pageDelegate:PageViewDelegate!
-    var contentMode:UIView.ContentMode = .scaleAspectFill
-    var transitionStyle:UIPageViewController.TransitionStyle = .scroll
-    var direction:UIPageViewController.NavigationDirection = .forward
-    var orientation:UIPageViewController.NavigationOrientation = .horizontal
-    var options:[UIPageViewController.OptionsKey:Any]? = nil
-    var animated = true
-    var pageControlActiveTint:UIColor = UIColor.black
-    var pageControlInactiveTint:UIColor = UIColor.lightGray
+    
+    public var contentMode:UIView.ContentMode = .scaleAspectFill
+    public var transitionStyle:UIPageViewController.TransitionStyle = .scroll
+    public var direction:UIPageViewController.NavigationDirection = .forward
+    public var orientation:UIPageViewController.NavigationOrientation = .horizontal
+    public var options:[UIPageViewController.OptionsKey:Any]? = nil
+    public var animated = true
+    public var pageControlActiveTint:UIColor = UIColor.black
+    public var pageControlInactiveTint:UIColor = UIColor.lightGray
     
     public convenience init(withImages images:[Any] = [Any](), andOptions options:[UIPageViewController.OptionsKey:Any]? = nil) {
         self.init()
