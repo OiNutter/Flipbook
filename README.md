@@ -20,9 +20,32 @@ it, simply add the following line to your Podfile:
 pod 'Flipbook'
 ```
 
+## Usage
+
+```swift
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    var images:[String] = [String]()
+    for i in 1...5 {
+        images.append("image\(i)")
+    }
+
+    let flipbook:Flipbook = Flipbook(withImages: images)
+
+    addChild(flipbook)
+    view.addSubview(flipbook.view)
+    flipbook.view.expandToParent(view)
+    flipbook.didMove(toParent: self)
+}
+```
+
+Images can be an array of `UIImage`s, `String`s or `URL`s.
+
 ## Author
 
-OiNutter, will.mckenzie@coolblue.co.uk
+OiNutter, will@oinutter.co.uk
 
 ## License
 
