@@ -19,6 +19,8 @@ public class Flipbook:UIViewController {
     var orientation:UIPageViewController.NavigationOrientation = .horizontal
     var options:[UIPageViewController.OptionsKey:Any]? = nil
     var animated = true
+    var pageControlActiveTint:UIColor = UIColor.black
+    var pageControlInactiveTint:UIColor = UIColor.lightGray
     
     public convenience init(withImages images:[Any] = [Any](), andOptions options:[UIPageViewController.OptionsKey:Any]? = nil) {
         self.init()
@@ -63,8 +65,8 @@ public class Flipbook:UIViewController {
         pageControl.numberOfPages = imageList.count
         pageControl.currentPage = 0
         pageControl.tintColor = view.tintColor
-        pageControl.pageIndicatorTintColor = UIColor.white
-        pageControl.currentPageIndicatorTintColor = UIColor.black
+        pageControl.pageIndicatorTintColor = pageControlInactiveTint
+        pageControl.currentPageIndicatorTintColor = pageControlActiveTint
         
         pageDelegate = PageViewDelegate(withImages: imageList, andControl: pageControl)
         pageController!.delegate = pageDelegate
