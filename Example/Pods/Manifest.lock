@@ -5,20 +5,20 @@ PODS:
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
   - Flipbook (0.1.0)
-  - Nimble (7.0.3)
+  - Nimble (7.1.3)
   - Nimble-Snapshots (6.3.0):
     - Nimble-Snapshots/Core (= 6.3.0)
   - Nimble-Snapshots/Core (6.3.0):
     - FBSnapshotTestCase (~> 2.0)
     - Nimble (~> 7.0)
-  - Quick (1.2.0)
+  - Quick (1.3.1)
 
 DEPENDENCIES:
   - FBSnapshotTestCase (~> 2.1.4)
   - Flipbook (from `../`)
-  - Nimble (~> 7.0.2)
+  - Nimble (~> 7.1.3)
   - Nimble-Snapshots (~> 6.3.0)
-  - Quick (~> 1.2.0)
+  - Quick (~> 1.3.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -34,10 +34,10 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   Flipbook: 1018a9d870bbc1afdf8130602ad270089278b4d7
-  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  Nimble: 2839b01d1b31f6a6a7777a221f0d91cf52e8e27b
   Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
-  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  Quick: d17304d58d0d169dd0bd1c6e5c28e3318de32a1a
 
-PODFILE CHECKSUM: ecb598955ca885988576f71b44561a06748d1724
+PODFILE CHECKSUM: 593c30823d5e7c4b6ad9bcd9b3abf8b21ada2dab
 
 COCOAPODS: 1.5.3
