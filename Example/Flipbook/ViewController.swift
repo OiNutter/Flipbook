@@ -24,11 +24,12 @@ class ViewController: UIViewController {
         }
         
         let flipbook:Flipbook = Flipbook(withImages: images)
-
+        
         addChild(flipbook)
         sliderView.addSubview(flipbook.view)
         flipbook.view.expandToParent(sliderView)
         flipbook.didMove(toParent: self)
+                    
     }
 
     override func didReceiveMemoryWarning() {

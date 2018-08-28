@@ -72,14 +72,16 @@ public class Flipbook:UIViewController {
         pageDelegate = PageViewDelegate(withImages: imageList, andControl: pageControl)
         pageController!.delegate = pageDelegate
         
-        let startingViewController: ImageViewController = dataSource.viewControllerAtIndex(0)!
-        let viewControllers = [startingViewController]
-        pageController!.setViewControllers(
-            viewControllers,
-            direction: direction,
-            animated: animated,
-            completion: {done in }
-        )
+        if (imageList.count > 0) {
+            let startingViewController: ImageViewController = dataSource.viewControllerAtIndex(0)!
+            let viewControllers = [startingViewController]
+            pageController!.setViewControllers(
+                viewControllers,
+                direction: direction,
+                animated: animated,
+                completion: {done in }
+            )
+        }
         
         pageController!.dataSource = dataSource
         
